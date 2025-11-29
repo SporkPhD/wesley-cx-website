@@ -50,22 +50,40 @@ document.addEventListener('DOMContentLoaded', () => {
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typeSpeed = 100;
+    let isCorrecting = false; // New state for fixing typos
+    let typeSpeed = 70;
 
     function type() {
         const currentRole = roles[roleIndex];
 
         if (isDeleting) {
+            // Deleting the entire word
             typingText.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 50;
+            typeSpeed = 40;
+        } else if (isCorrecting) {
+            // Deleting a single wrong character (typo)
+            typingText.textContent = typingText.textContent.slice(0, -1);
+            isCorrecting = false;
+            typeSpeed = 70; // Speed to resume typing after correction
         } else {
-            typingText.textContent = currentRole.substring(0, charIndex + 1);
-            charIndex++;
-            typeSpeed = 100;
+            // Typing forward
+            // Random chance to make a mistake (only if not finishing the word)
+            if (!isCorrecting && charIndex < currentRole.length && Math.random() < 0.03) {
+                const chars = "abcdefghijklmnopqrstuvwxyz";
+                const randomChar = chars[Math.floor(Math.random() * chars.length)];
+                typingText.textContent += randomChar;
+                isCorrecting = true;
+                typeSpeed = 400; // "Oh shoot" pause
+            } else {
+                // Correct typing
+                typingText.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 70 + Math.random() * 50; // Slight human variation
+            }
         }
 
-        if (!isDeleting && charIndex === currentRole.length) {
+        if (!isDeleting && !isCorrecting && charIndex === currentRole.length) {
             isDeleting = true;
             typeSpeed = 2000; // Pause at end
         } else if (isDeleting && charIndex === 0) {
