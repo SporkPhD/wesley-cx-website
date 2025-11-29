@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, 1000);
 
     // --- Experience Counter ---
-    const startDate = new Date('2022-01-023'); // Assume start date
+    const startDate = new Date('2022-01-23'); // Assume start date
     const counterElement = document.getElementById('experience-counter');
 
     function updateCounter() {
