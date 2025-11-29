@@ -1,0 +1,31 @@
+/* Coolors Exported Palette - https://coolors.co/0c0f0a-ff206e-fbff12-41ead4-ffffff */
+
+- CSV
+
+0c0f0a,ff206e,fbff12,41ead4,ffffff
+
+- With #
+
+#0c0f0a, #ff206e, #fbff12, #41ead4, #ffffff
+
+- Array
+
+["0c0f0a","ff206e","fbff12","41ead4","ffffff"]
+
+- Object
+
+{"Onyx":"0c0f0a","Neon Pink":"ff206e","Yellow":"fbff12","Turquoise":"41ead4","White":"ffffff"}
+
+- Extended Array
+
+[{"name":"Onyx","hex":"0c0f0a","rgb":[12,15,10],"cmyk":[20,0,33,94],"hsb":[96,33,6],"hsl":[96,20,5],"lab":[4,-2,2]},{"name":"Neon Pink","hex":"ff206e","rgb":[255,32,110],"cmyk":[0,87,57,0],"hsb":[339,87,100],"hsl":[339,100,56],"lab":[56,80,16]},{"name":"Yellow","hex":"fbff12","rgb":[251,255,18],"cmyk":[2,0,93,0],"hsb":[61,93,100],"hsl":[61,100,54],"lab":[97,-23,93]},{"name":"Turquoise","hex":"41ead4","rgb":[65,234,212],"cmyk":[72,0,9,8],"hsb":[172,72,92],"hsl":[172,80,59],"lab":[84,-47,-2]},{"name":"White","hex":"ffffff","rgb":[255,255,255],"cmyk":[0,0,0,0],"hsb":[0,0,100],"hsl":[0,0,100],"lab":[100,0,0]}]
+
+- XML
+
+<palette>
+  <color name="Onyx" hex="0c0f0a" r="12" g="15" b="10" />
+  <color name="Neon Pink" hex="ff206e" r="255" g="32" b="110" />
+  <color name="Yellow" hex="fbff12" r="251" g="255" b="18" />
+  <color name="Turquoise" hex="41ead4" r="65" g="234" b="212" />
+  <color name="White" hex="ffffff" r="255" g="255" b="255" />
+</palette>
