@@ -284,8 +284,15 @@ h6 {
     font-size: 1.2rem;
 }
 
+.social-sidebar a i {
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 .social-sidebar a:hover {
     color: var(--accent-color);
+}
+
+.social-sidebar a:hover i {
     transform: translateY(-3px);
 }
 
