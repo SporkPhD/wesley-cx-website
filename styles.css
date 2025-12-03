@@ -757,3 +757,108 @@ section {
         border-bottom-color: var(--accent-color);
     }
 }
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+    color: inherit;
+    /* Match existing color */
+    /* Font styles inherited from parent */
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--nav-bg);
+    /* Match background to hide main text */
+    overflow: hidden;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -1px 0 red;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-1 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -1px 0 blue;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim-2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+
+    0%,
+    90% {
+        clip: rect(0, 0, 0, 0);
+        text-shadow: -2px 0 red;
+    }
+
+    91% {
+        clip: rect(70px, 350px, 120px, 30px);
+        text-shadow: -3px -2px #ff00ff, 3px 2px #39ff14;
+    }
+
+    92% {
+        clip: rect(20px, 350px, 100px, 30px);
+        text-shadow: 4px 1px #ff003c, -2px -1px #ff00ff;
+    }
+
+    93% {
+        clip: rect(85px, 350px, 140px, 30px);
+        text-shadow: -2px 3px #39ff14, 2px -2px #ff003c;
+    }
+
+    94% {
+        clip: rect(10px, 350px, 60px, 30px);
+        text-shadow: 3px -1px #ff00ff, -4px 2px #39ff14;
+    }
+
+    95%,
+    100% {
+        clip: rect(0, 0, 0, 0);
+        text-shadow: -2px 0 red;
+    }
+}
+
+@keyframes glitch-anim-2 {
+
+    0%,
+    82% {
+        clip: rect(0, 0, 0, 0);
+        text-shadow: -2px 0 blue;
+    }
+
+    83% {
+        clip: rect(40px, 350px, 90px, 30px);
+        text-shadow: 2px -2px #39ff14, -3px 1px #ff003c;
+    }
+
+    84% {
+        clip: rect(110px, 350px, 130px, 30px);
+        text-shadow: -4px 2px #ff00ff, 2px -3px #39ff14;
+    }
+
+    85% {
+        clip: rect(10px, 350px, 50px, 30px);
+        text-shadow: 3px 1px #ff003c, -2px -2px #ff00ff;
+    }
+
+    86% {
+        clip: rect(90px, 350px, 150px, 30px);
+        text-shadow: -3px -1px #39ff14, 4px 2px #ff003c;
+    }
+
+    87%,
+    100% {
+        clip: rect(0, 0, 0, 0);
+        text-shadow: -2px 0 blue;
+    }
+}
